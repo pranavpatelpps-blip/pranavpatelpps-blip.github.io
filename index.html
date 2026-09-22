@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{ --bg:#f5f7fb; --bg-soft:#ffffff; --card:#ffffff; --border:#e3e9f2; --text:#0f172a; --muted:#5a6a85; --accent:#2563eb; --accent-2:#0ea5e9; --shadow:0 10px 30px rgba(15,23,42,.07); --shadow-lg:0 20px 50px rgba(15,23,42,.12); --radius:18px; }
-html[data-theme="dark"]{ --bg:#0a1020; --bg-soft:#0e1628; --card:#111b2f; --border:#1e2b45; --text:#e8eefb; --muted:#9aa9c4; --accent:#4f8cff; --accent-2:#22d3ee; --shadow:0 10px 30px rgba(0,0,0,.35); --shadow-lg:0 20px 50px rgba(0,0,0,.5); }
+:root{ --bg:#f5f7fb; --bg-soft:#ffffff; --bg-glass:color-mix(in srgb,#ffffff 78%,transparent); --card:#ffffff; --border:#e3e9f2; --text:#0f172a; --muted:#5a6a85; --accent:#2563eb; --accent-2:#0ea5e9; --shadow:0 10px 30px rgba(15,23,42,.07); --shadow-lg:0 20px 50px rgba(15,23,42,.12); --radius:18px; }
+html[data-theme="dark"]{ --bg:#0a1020; --bg-soft:#0e1628; --bg-glass:color-mix(in srgb,#0e1628 78%,transparent); --card:#111b2f; --border:#1e2b45; --text:#e8eefb; --muted:#9aa9c4; --accent:#4f8cff; --accent-2:#22d3ee; --shadow:0 10px 30px rgba(0,0,0,.35); --shadow-lg:0 20px 50px rgba(0,0,0,.5); }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:90px}
 body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased;transition:background .3s ease,color .3s ease;}
@@ -101,12 +101,35 @@ section{padding:84px 0}
 footer{border-top:1px solid var(--border);padding:28px 0;text-align:center;font-size:.85rem;color:var(--muted);}
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}
 .reveal.in{opacity:1;transform:none}
+
+/* ══════════════════════════════════════
+   3D BACKGROUND (WebGL globe)
+   ══════════════════════════════════════ */
+#gl{
+  position:fixed; inset:0;
+  width:100vw; height:100vh;
+  z-index:0;
+  pointer-events:none;
+  display:block;
+}
+.vig{
+  position:fixed; inset:0; z-index:1; pointer-events:none;
+  background:radial-gradient(ellipse 74% 60% at 50% 44%, transparent 22%, var(--bg) 96%);
+}
+/* Content sits above canvas + vignette */
+main, footer{position:relative; z-index:2}
+/* Nav is already sticky w/ z-index:100 — keep it above everything */
+
 @media (max-width:940px){ .hero-grid{grid-template-columns:1fr;text-align:center;gap:40px} .photo-col{order:-1} .lede,.contact-row{margin-inline:auto;justify-content:center} .cta{justify-content:center} .stats{grid-template-columns:repeat(2,1fr)} .grid-3{grid-template-columns:1fr} .grid-2{grid-template-columns:1fr} }
 @media (max-width:760px){ .menu-btn{display:grid} .links{position:fixed;inset:68px 0 auto 0;flex-direction:column;gap:2px;background:var(--bg-soft);border-bottom:1px solid var(--border);padding:14px 5%;box-shadow:var(--shadow-lg);transform:translateY(-130%);transition:transform .32s ease;visibility:hidden;} .links.open{transform:translateY(0);visibility:visible} .links a{padding:12px 14px;font-size:1rem} section{padding:62px 0} .hero{padding:44px 0 64px} }
 @media (prefers-reduced-motion:reduce){ *{animation:none!important;transition:none!important;scroll-behavior:auto!important} .reveal{opacity:1;transform:none} }
 </style>
 </head>
 <body>
+
+<!-- 3D BACKGROUND -->
+<canvas id="gl" aria-hidden="true"></canvas>
+<div class="vig" aria-hidden="true"></div>
 
 <header class="nav" id="nav">
   <div class="container nav-inner">
@@ -162,7 +185,7 @@ footer{border-top:1px solid var(--border);padding:28px 0;text-align:center;font-
   </div>
 </section>
 
-<section id="education" style="background:var(--bg-soft);border-block:1px solid var(--border)">
+<section id="education" style="background:var(--bg-glass);border-block:1px solid var(--border)">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow" id="edu-eyebrow"></span>
@@ -183,7 +206,7 @@ footer{border-top:1px solid var(--border);padding:28px 0;text-align:center;font-
   </div>
 </section>
 
-<section id="projects" style="background:var(--bg-soft);border-block:1px solid var(--border)">
+<section id="projects" style="background:var(--bg-glass);border-block:1px solid var(--border)">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow" id="proj-eyebrow"></span>
@@ -206,7 +229,7 @@ footer{border-top:1px solid var(--border);padding:28px 0;text-align:center;font-
   </div>
 </section>
 
-<section id="achievements" style="background:var(--bg-soft);border-block:1px solid var(--border)">
+<section id="achievements" style="background:var(--bg-glass);border-block:1px solid var(--border)">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow" id="ach-eyebrow"></span>
@@ -417,6 +440,252 @@ async function fetchGitHubProjects() {
 
 loadResumeData();
 fetchGitHubProjects();
+</script>
+
+<!-- ══════════════════════════════════════
+     3D BACKGROUND SCENE (Three.js)
+     ══════════════════════════════════════ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function initGlobe(){
+  if (!window.THREE) return;
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const canvas = document.getElementById('gl');
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(window.innerWidth, window.innerHeight);
+
+  const scene = new THREE.Scene();
+  scene.fog = new THREE.FogExp2(0x0a1020, 0.05);
+
+  const camera = new THREE.PerspectiveCamera(52, window.innerWidth / window.innerHeight, 0.1, 200);
+  camera.position.set(0, 0, 9);
+  camera.lookAt(0, 0, 0);
+
+  const group = new THREE.Group();
+  scene.add(group);
+
+  /* ── WIREFRAME GLOBE ── */
+  const wireMat = new THREE.MeshBasicMaterial({
+    color: 0x22d3ee, wireframe: true, transparent: true, opacity: 0.12
+  });
+  const wire = new THREE.Mesh(new THREE.IcosahedronGeometry(2.6, 3), wireMat);
+  group.add(wire);
+
+  /* ── DATA POINTS (Fibonacci sphere) ── */
+  const N = 2400;
+  const pos = new Float32Array(N * 3);
+  const col = new Float32Array(N * 3);
+  const R = 2.62;
+  const golden = Math.PI * (1 + Math.sqrt(5));
+  const cAccent  = new THREE.Color(0x4f8cff); // --accent   (dark theme)
+  const cAccent2 = new THREE.Color(0x22d3ee); // --accent-2 (dark theme)
+  const tmp = new THREE.Color();
+
+  for (let i = 0; i < N; i++) {
+    const y = 1 - (i / (N - 1)) * 2;
+    const r = Math.sqrt(1 - y * y);
+    const theta = golden * i;
+    const x = Math.cos(theta) * r;
+    const z = Math.sin(theta) * r;
+    const j = 1 + (Math.random() - 0.5) * 0.02;
+    pos[i * 3]     = x * R * j;
+    pos[i * 3 + 1] = y * R * j;
+    pos[i * 3 + 2] = z * R * j;
+    const t = (y + 1) / 2;
+    tmp.copy(cAccent).lerp(cAccent2, t);
+    col[i * 3]     = tmp.r;
+    col[i * 3 + 1] = tmp.g;
+    col[i * 3 + 2] = tmp.b;
+  }
+  const ptGeo = new THREE.BufferGeometry();
+  ptGeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  ptGeo.setAttribute('color', new THREE.BufferAttribute(col, 3));
+  const ptMat = new THREE.PointsMaterial({
+    size: 0.045, vertexColors: true, transparent: true,
+    opacity: 0.95, sizeAttenuation: true, depthWrite: false
+  });
+  const points = new THREE.Points(ptGeo, ptMat);
+  group.add(points);
+
+  /* ── ORBITING RING PARTICLES ── */
+  const RC = 500;
+  const rPos = new Float32Array(RC * 3);
+  const rData = [];
+  for (let i = 0; i < RC; i++) {
+    const a = Math.random() * Math.PI * 2;
+    const rr = 3.6 + Math.random() * 1.4;
+    const tilt = Math.random() * Math.PI - Math.PI / 2;
+    rPos[i * 3]     = Math.cos(a) * rr;
+    rPos[i * 3 + 1] = Math.sin(tilt) * 0.6;
+    rPos[i * 3 + 2] = Math.sin(a) * rr;
+    rData.push({ a, r: rr, tilt, speed: 0.06 + Math.random() * 0.12 });
+  }
+  const rGeo = new THREE.BufferGeometry();
+  rGeo.setAttribute('position', new THREE.BufferAttribute(rPos, 3));
+  const rMat = new THREE.PointsMaterial({
+    color: 0x22d3ee, size: 0.035, transparent: true,
+    opacity: 0.7, sizeAttenuation: true, depthWrite: false
+  });
+  const rings = new THREE.Points(rGeo, rMat);
+  group.add(rings);
+
+  /* ── STARFIELD ── */
+  const S = 1200;
+  const sPos = new Float32Array(S * 3);
+  for (let i = 0; i < S; i++) {
+    sPos[i * 3]     = (Math.random() - 0.5) * 60;
+    sPos[i * 3 + 1] = (Math.random() - 0.5) * 60;
+    sPos[i * 3 + 2] = (Math.random() - 0.5) * 60 - 15;
+  }
+  const sGeo = new THREE.BufferGeometry();
+  sGeo.setAttribute('position', new THREE.BufferAttribute(sPos, 3));
+  const sMat = new THREE.PointsMaterial({
+    color: 0xffffff, size: 0.03, transparent: true,
+    opacity: 0.35, sizeAttenuation: true, depthWrite: false
+  });
+  const stars = new THREE.Points(sGeo, sMat);
+  scene.add(stars);
+
+  /* ── LIGHTS ── */
+  scene.add(new THREE.AmbientLight(0xffffff, 0.4));
+  const l1 = new THREE.PointLight(0x0ea5e9, 1.5, 30); l1.position.set(6, 5, 6);   scene.add(l1);
+  const l2 = new THREE.PointLight(0x2563eb, 1.2, 30); l2.position.set(-6, -3, 5); scene.add(l2);
+
+  /* ── THEME-AWARE COLOURS ── */
+  const htmlRoot = document.documentElement;
+  function applyTheme(){
+    const isDark = htmlRoot.getAttribute('data-theme') === 'dark';
+
+    // Fog + opacities
+    scene.fog.color.setHex(isDark ? 0x0a1020 : 0xf5f7fb);
+    wireMat.opacity = isDark ? 0.12 : 0.20;
+    ptMat.opacity   = isDark ? 0.95 : 0.85;
+    rMat.opacity    = isDark ? 0.70 : 0.50;
+    sMat.opacity    = isDark ? 0.35 : 0.12;
+
+    // Accent colors (match original portfolio palette)
+    cAccent.setHex(isDark  ? 0x4f8cff : 0x2563eb);
+    cAccent2.setHex(isDark ? 0x22d3ee : 0x0ea5e9);
+
+    // Rebuild point colors
+    const py = ptGeo.attributes.position.array;
+    const ca = ptGeo.attributes.color.array;
+    for (let i = 0; i < N; i++) {
+      const y = py[i * 3 + 1] / R;
+      const t = (y + 1) / 2;
+      tmp.copy(cAccent).lerp(cAccent2, t);
+      ca[i * 3]     = tmp.r;
+      ca[i * 3 + 1] = tmp.g;
+      ca[i * 3 + 2] = tmp.b;
+    }
+    ptGeo.attributes.color.needsUpdate = true;
+
+    rMat.color.setHex(isDark ? 0x22d3ee : 0x0ea5e9);
+    wireMat.color.setHex(isDark ? 0x22d3ee : 0x2563eb);
+    sMat.color.setHex(isDark ? 0xffffff : 0x0a1020);
+
+    if (prefersReduced) renderer.render(scene, camera);
+  }
+  applyTheme();
+  new MutationObserver(applyTheme).observe(htmlRoot, { attributes: true, attributeFilter: ['data-theme'] });
+
+  /* ── RESIZE ── */
+  window.addEventListener('resize', () => {
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+  });
+
+  /* ── REDUCED MOTION: render one static frame and stop ── */
+  if (prefersReduced) {
+    renderer.render(scene, camera);
+    return;
+  }
+
+  /* ── INTERACTION ── */
+  const mouse = { x: 0, y: 0, tx: 0, ty: 0 };
+  let dragging = false, vx = 0, vy = 0, lastX = 0, lastY = 0, rotX = 0, rotY = 0;
+
+  window.addEventListener('pointermove', (e) => {
+    mouse.tx = (e.clientX / window.innerWidth) * 2 - 1;
+    mouse.ty = (e.clientY / window.innerHeight) * 2 - 1;
+    if (dragging) {
+      vx = (e.clientX - lastX) * 0.005;
+      vy = (e.clientY - lastY) * 0.005;
+      lastX = e.clientX; lastY = e.clientY;
+    }
+  }, { passive: true });
+
+  window.addEventListener('pointerdown', (e) => {
+    if (e.target.closest('a, button, input, textarea, select')) return;
+    dragging = true; lastX = e.clientX; lastY = e.clientY;
+    document.body.style.cursor = 'grabbing';
+  });
+  window.addEventListener('pointerup', () => {
+    dragging = false;
+    document.body.style.cursor = '';
+  });
+
+  let scrollP = 0;
+  window.addEventListener('scroll', () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    scrollP = max > 0 ? window.scrollY / max : 0;
+  }, { passive: true });
+
+  /* ── ANIMATION LOOP ── */
+  const clock = new THREE.Clock();
+  let time = 0;
+
+  function frame(){
+    const dt = Math.min(clock.getDelta(), 0.05);
+    time += dt;
+
+    // Smooth mouse
+    mouse.x += (mouse.tx - mouse.x) * 0.06;
+    mouse.y += (mouse.ty - mouse.y) * 0.06;
+
+    // Drag momentum + gentle auto-spin
+    rotY += vx; rotX += vy;
+    vx *= 0.94; vy *= 0.94;
+    if (!dragging) rotY += dt * 0.10;
+
+    group.rotation.y = rotY;
+    group.rotation.x = rotX * 0.6;
+    group.rotation.z = Math.sin(time * 0.15) * 0.05 + scrollP * 0.3;
+
+    points.rotation.y += dt * 0.02;
+
+    // Ring orbit
+    const rp = rGeo.attributes.position.array;
+    for (let i = 0; i < RC; i++) {
+      const d = rData[i];
+      d.a += dt * d.speed;
+      rp[i * 3]     = Math.cos(d.a) * d.r;
+      rp[i * 3 + 1] = Math.sin(d.tilt + d.a * 0.3) * 0.7;
+      rp[i * 3 + 2] = Math.sin(d.a) * d.r;
+    }
+    rGeo.attributes.position.needsUpdate = true;
+
+    // Star drift
+    stars.rotation.y += dt * 0.01;
+
+    // Camera parallax + scroll dolly
+    const camR = 9 - scrollP * 3.5;
+    const ax = mouse.x * 0.5;
+    const ay = mouse.y * 0.35;
+    camera.position.x += (Math.sin(ax) * camR - camera.position.x) * 0.05;
+    camera.position.y += (-ay * 2.5 - camera.position.y) * 0.05;
+    camera.position.z += (Math.cos(ax) * camR - camera.position.z) * 0.05;
+    camera.lookAt(0, 0, 0);
+
+    renderer.render(scene, camera);
+  }
+
+  function loop(){ frame(); requestAnimationFrame(loop); }
+  loop();
+})();
 </script>
 
 </body>
