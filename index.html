@@ -6,7 +6,6 @@
 <title>Pranav Patel — Business & Data Analyst</title>
 <meta name="description" content="Pranav Patel — MBA Business Analytics candidate. Power BI, SQL, Excel, Business Intelligence, Workflow Automation." />
 
-<!-- Social preview -->
 <meta property="og:title" content="Pranav Patel — Business & Data Analyst" />
 <meta property="og:description" content="Power BI | SQL | Excel | Business Intelligence" />
 <meta property="og:type" content="website" />
@@ -18,41 +17,19 @@
 <style>
 /* ============ THEME TOKENS ============ */
 :root{
-  --bg:#f5f7fb;
-  --bg-soft:#ffffff;
-  --card:#ffffff;
-  --border:#e3e9f2;
-  --text:#0f172a;
-  --muted:#5a6a85;
-  --accent:#2563eb;
-  --accent-2:#0ea5e9;
-  --shadow:0 10px 30px rgba(15,23,42,.07);
-  --shadow-lg:0 20px 50px rgba(15,23,42,.12);
+  --bg:#f5f7fb; --bg-soft:#ffffff; --card:#ffffff; --border:#e3e9f2;
+  --text:#0f172a; --muted:#5a6a85; --accent:#2563eb; --accent-2:#0ea5e9;
+  --shadow:0 10px 30px rgba(15,23,42,.07); --shadow-lg:0 20px 50px rgba(15,23,42,.12);
   --radius:18px;
 }
 html[data-theme="dark"]{
-  --bg:#0a1020;
-  --bg-soft:#0e1628;
-  --card:#111b2f;
-  --border:#1e2b45;
-  --text:#e8eefb;
-  --muted:#9aa9c4;
-  --accent:#4f8cff;
-  --accent-2:#22d3ee;
-  --shadow:0 10px 30px rgba(0,0,0,.35);
-  --shadow-lg:0 20px 50px rgba(0,0,0,.5);
+  --bg:#0a1020; --bg-soft:#0e1628; --card:#111b2f; --border:#1e2b45;
+  --text:#e8eefb; --muted:#9aa9c4; --accent:#4f8cff; --accent-2:#22d3ee;
+  --shadow:0 10px 30px rgba(0,0,0,.35); --shadow-lg:0 20px 50px rgba(0,0,0,.5);
 }
-
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{
-  font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.65;
-  -webkit-font-smoothing:antialiased;
-  transition:background .3s ease,color .3s ease;
-}
+body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased;transition:background .3s ease,color .3s ease;}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 
@@ -60,222 +37,92 @@ a{color:inherit;text-decoration:none}
 .container{width:min(1140px,92%);margin-inline:auto}
 section{padding:84px 0}
 .section-head{margin-bottom:42px}
-.eyebrow{
-  display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--accent);margin-bottom:10px;
-}
+.eyebrow{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
 .section-head h2{font-size:clamp(1.6rem,3.4vw,2.2rem);font-weight:800;letter-spacing:-.02em}
 .section-head p{color:var(--muted);max-width:640px;margin-top:8px}
 
 /* ============ NAV ============ */
-.nav{
-  position:sticky;top:0;z-index:100;
-  background:color-mix(in srgb,var(--bg) 82%,transparent);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid transparent;
-  transition:border-color .3s,background .3s;
-}
+.nav{position:sticky;top:0;z-index:100;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s,background .3s;}
 .nav.scrolled{border-bottom-color:var(--border)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
-.brand{
-  font-weight:800;font-size:1.15rem;letter-spacing:-.02em;
-  width:42px;height:42px;border-radius:12px;display:grid;place-items:center;
-  background:linear-gradient(135deg,var(--accent),var(--accent-2));
-  color:#fff;box-shadow:var(--shadow);
-}
+.brand{font-weight:800;font-size:1.15rem;letter-spacing:-.02em;width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;box-shadow:var(--shadow);}
 .links{display:flex;gap:4px}
-.links a{
-  padding:8px 14px;border-radius:10px;font-size:.92rem;font-weight:500;
-  color:var(--muted);transition:.2s;
-}
+.links a{padding:8px 14px;border-radius:10px;font-size:.92rem;font-weight:500;color:var(--muted);transition:.2s;}
 .links a:hover{color:var(--text);background:var(--card);box-shadow:var(--shadow)}
 .nav-actions{display:flex;gap:8px}
-.icon-btn{
-  width:40px;height:40px;border-radius:11px;border:1px solid var(--border);
-  background:var(--card);color:var(--text);font-size:1rem;cursor:pointer;
-  display:grid;place-items:center;transition:.2s;
-}
+.icon-btn{width:40px;height:40px;border-radius:11px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:1rem;cursor:pointer;display:grid;place-items:center;transition:.2s;}
 .icon-btn:hover{border-color:var(--accent);transform:translateY(-1px)}
 .menu-btn{display:none}
 
 /* ============ HERO ============ */
 .hero{padding:70px 0 80px;position:relative;overflow:hidden}
-.hero::before{
-  content:"";position:absolute;top:-220px;right:-160px;width:520px;height:520px;
-  background:radial-gradient(circle,var(--accent) 0%,transparent 68%);
-  opacity:.16;filter:blur(30px);pointer-events:none;
-}
-.hero-grid{
-  display:grid;grid-template-columns:1.35fr .85fr;gap:56px;align-items:center;
-  position:relative;
-}
-.badge{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:7px 14px;border-radius:999px;font-size:.8rem;font-weight:600;
-  background:var(--card);border:1px solid var(--border);color:var(--muted);
-  box-shadow:var(--shadow);margin-bottom:20px;
-}
+.hero::before{content:"";position:absolute;top:-220px;right:-160px;width:520px;height:520px;background:radial-gradient(circle,var(--accent) 0%,transparent 68%);opacity:.16;filter:blur(30px);pointer-events:none;}
+.hero-grid{display:grid;grid-template-columns:1.35fr .85fr;gap:56px;align-items:center;position:relative;}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;font-size:.8rem;font-weight:600;background:var(--card);border:1px solid var(--border);color:var(--muted);box-shadow:var(--shadow);margin-bottom:20px;}
 .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.18)}
-.hero h1{
-  font-size:clamp(2.2rem,5.6vw,3.5rem);font-weight:800;letter-spacing:-.035em;
-  line-height:1.08;margin-bottom:14px;
-}
-.gradient-text{
-  background:linear-gradient(120deg,var(--accent),var(--accent-2));
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-}
+.hero h1{font-size:clamp(2.2rem,5.6vw,3.5rem);font-weight:800;letter-spacing:-.035em;line-height:1.08;margin-bottom:14px;}
+.gradient-text{background:linear-gradient(120deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;}
 .role{font-size:1.03rem;font-weight:600;color:var(--muted);margin-bottom:18px}
 .lede{color:var(--muted);max-width:560px;margin-bottom:28px}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px}
-.btn{
-  display:inline-flex;align-items:center;gap:9px;
-  padding:12px 22px;border-radius:12px;font-weight:600;font-size:.93rem;
-  border:1px solid transparent;cursor:pointer;transition:.22s;
-}
-.btn-primary{
-  background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;
-  box-shadow:0 8px 22px rgba(37,99,235,.3);
-}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 22px;border-radius:12px;font-weight:600;font-size:.93rem;border:1px solid transparent;cursor:pointer;transition:.22s;}
+.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;box-shadow:0 8px 22px rgba(37,99,235,.3);}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(37,99,235,.4)}
 .btn-ghost{background:var(--card);border-color:var(--border);color:var(--text);box-shadow:var(--shadow)}
 .btn-ghost:hover{border-color:var(--accent);transform:translateY(-2px)}
-
 .contact-row{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:.88rem;color:var(--muted)}
 .contact-row a{display:inline-flex;align-items:center;gap:7px;transition:.2s}
 .contact-row a:hover{color:var(--accent)}
-
-/* Photo */
 .photo-col{display:flex;justify-content:center}
-.photo{
-  position:relative;width:min(290px,72vw);aspect-ratio:1;border-radius:50%;
-  padding:7px;background:linear-gradient(135deg,var(--accent),var(--accent-2));
-  box-shadow:var(--shadow-lg);
-}
-.photo::after{
-  content:"";position:absolute;inset:-16px;border-radius:50%;
-  border:1px dashed var(--border);animation:spin 26s linear infinite;
-}
+.photo{position:relative;width:min(290px,72vw);aspect-ratio:1;border-radius:50%;padding:7px;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:var(--shadow-lg);}
+.photo::after{content:"";position:absolute;inset:-16px;border-radius:50%;border:1px dashed var(--border);animation:spin 26s linear infinite;}
 @keyframes spin{to{transform:rotate(360deg)}}
-.photo .initials,.photo img{
-  position:absolute;inset:7px;width:calc(100% - 14px);height:calc(100% - 14px);
-  border-radius:50%;object-fit:cover;background:var(--bg-soft);
-}
-.photo .initials{
-  display:grid;place-items:center;font-size:4.4rem;font-weight:800;
-  letter-spacing:-.04em;color:var(--accent);
-}
-
-/* Stats */
-.stats{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:64px;
-}
-.stat{
-  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
-  padding:20px;text-align:center;box-shadow:var(--shadow);transition:.25s;
-}
+.photo .initials,.photo img{position:absolute;inset:7px;width:calc(100% - 14px);height:calc(100% - 14px);border-radius:50%;object-fit:cover;background:var(--bg-soft);}
+.photo .initials{display:grid;place-items:center;font-size:4.4rem;font-weight:800;letter-spacing:-.04em;color:var(--accent);}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:64px;}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center;box-shadow:var(--shadow);transition:.25s;}
 .stat:hover{transform:translateY(-4px);border-color:var(--accent)}
-.stat b{display:block;font-size:1.6rem;font-weight:800;letter-spacing:-.03em;
-  background:linear-gradient(120deg,var(--accent),var(--accent-2));
-  -webkit-background-clip:text;background-clip:text;color:transparent;}
+.stat b{display:block;font-size:1.6rem;font-weight:800;letter-spacing:-.03em;background:linear-gradient(120deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;}
 .stat span{font-size:.78rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
 
 /* ============ CARDS ============ */
-.card{
-  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
-  padding:26px;box-shadow:var(--shadow);transition:.25s;
-}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);transition:.25s;}
 .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:color-mix(in srgb,var(--accent) 40%,var(--border))}
-
 .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-
-/* Education */
 .edu-card{position:relative;padding-left:26px}
-.edu-card::before{
-  content:"";position:absolute;left:0;top:26px;bottom:26px;width:4px;border-radius:4px;
-  background:linear-gradient(180deg,var(--accent),var(--accent-2));
-}
-.edu-year{
-  display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.05em;
-  padding:4px 11px;border-radius:999px;background:color-mix(in srgb,var(--accent) 12%,transparent);
-  color:var(--accent);margin-bottom:10px;
-}
+.edu-card::before{content:"";position:absolute;left:0;top:26px;bottom:26px;width:4px;border-radius:4px;background:linear-gradient(180deg,var(--accent),var(--accent-2));}
+.edu-year{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.05em;padding:4px 11px;border-radius:999px;background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--accent);margin-bottom:10px;}
 .edu-card h3{font-size:1.12rem;font-weight:700;letter-spacing:-.01em}
 .edu-card .school{color:var(--muted);font-size:.92rem;margin-top:4px}
-
-/* Experience */
 .exp-head{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:6px}
 .exp-head h3{font-size:1.15rem;font-weight:700;letter-spacing:-.015em}
-.tag{
-  font-size:.74rem;font-weight:700;padding:5px 12px;border-radius:999px;
-  background:color-mix(in srgb,var(--accent-2) 14%,transparent);color:var(--accent-2);
-  white-space:nowrap;height:fit-content;
-}
+.tag{font-size:.74rem;font-weight:700;padding:5px 12px;border-radius:999px;background:color-mix(in srgb,var(--accent-2) 14%,transparent);color:var(--accent-2);white-space:nowrap;height:fit-content;}
 .exp-company{color:var(--muted);font-size:.92rem;font-weight:600;margin-bottom:16px}
 .bullets{list-style:none;display:grid;gap:11px}
 .bullets li{position:relative;padding-left:24px;color:var(--muted);font-size:.94rem}
-.bullets li::before{
-  content:"";position:absolute;left:6px;top:.62em;width:7px;height:7px;border-radius:50%;
-  background:linear-gradient(135deg,var(--accent),var(--accent-2));
-}
-
-/* Projects */
+.bullets li::before{content:"";position:absolute;left:6px;top:.62em;width:7px;height:7px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));}
 .project{display:flex;flex-direction:column;gap:14px}
 .project h3{font-size:1.08rem;font-weight:700;letter-spacing:-.015em;line-height:1.35}
 .stack{display:flex;flex-wrap:wrap;gap:7px}
-.stack span{
-  font-size:.73rem;font-weight:600;padding:5px 11px;border-radius:8px;
-  background:var(--bg);border:1px solid var(--border);color:var(--muted);
-}
+.stack span{font-size:.73rem;font-weight:600;padding:5px 11px;border-radius:8px;background:var(--bg);border:1px solid var(--border);color:var(--muted);}
 .project .bullets li{font-size:.9rem}
-
-/* Skills */
-.skill-group h3{
-  font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--accent);margin-bottom:14px;
-}
+.skill-group h3{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
 .chips{display:flex;flex-wrap:wrap;gap:9px}
-.chip{
-  font-size:.85rem;font-weight:500;padding:8px 15px;border-radius:10px;
-  background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow);
-  transition:.2s;cursor:default;
-}
+.chip{font-size:.85rem;font-weight:500;padding:8px 15px;border-radius:10px;background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow);transition:.2s;cursor:default;}
 .chip:hover{transform:translateY(-3px);border-color:var(--accent);color:var(--accent)}
-
-/* Achievement */
-.achievement{
-  display:flex;gap:18px;align-items:flex-start;
-  background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 9%,var(--card)),var(--card));
-  border:1px solid var(--border);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);
-}
-.medal{
-  flex:0 0 52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:1.5rem;
-  background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;
-}
+.achievement{display:flex;gap:18px;align-items:flex-start;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 9%,var(--card)),var(--card));border:1px solid var(--border);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);}
+.medal{flex:0 0 52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:1.5rem;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;}
 .achievement p{color:var(--muted);font-size:.95rem}
 .achievement strong{color:var(--text)}
-
-/* Contact */
-.contact-card{
-  text-align:center;padding:52px 26px;border-radius:24px;
-  background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 12%,var(--card)),var(--card));
-  border:1px solid var(--border);box-shadow:var(--shadow);
-}
+.contact-card{text-align:center;padding:52px 26px;border-radius:24px;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 12%,var(--card)),var(--card));border:1px solid var(--border);box-shadow:var(--shadow);}
 .contact-card h2{font-size:clamp(1.5rem,3.6vw,2rem);font-weight:800;letter-spacing:-.025em;margin-bottom:10px}
 .contact-card p{color:var(--muted);max-width:520px;margin:0 auto 26px}
 .contact-links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-
-/* Footer */
-footer{
-  border-top:1px solid var(--border);padding:28px 0;text-align:center;
-  font-size:.85rem;color:var(--muted);
-}
-
-/* ============ REVEAL ============ */
+footer{border-top:1px solid var(--border);padding:28px 0;text-align:center;font-size:.85rem;color:var(--muted);}
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}
 .reveal.in{opacity:1;transform:none}
 
-/* ============ RESPONSIVE ============ */
 @media (max-width:940px){
   .hero-grid{grid-template-columns:1fr;text-align:center;gap:40px}
   .photo-col{order:-1}
@@ -287,12 +134,7 @@ footer{
 }
 @media (max-width:760px){
   .menu-btn{display:grid}
-  .links{
-    position:fixed;inset:68px 0 auto 0;flex-direction:column;gap:2px;
-    background:var(--bg-soft);border-bottom:1px solid var(--border);
-    padding:14px 5%;box-shadow:var(--shadow-lg);
-    transform:translateY(-130%);transition:transform .32s ease;visibility:hidden;
-  }
+  .links{position:fixed;inset:68px 0 auto 0;flex-direction:column;gap:2px;background:var(--bg-soft);border-bottom:1px solid var(--border);padding:14px 5%;box-shadow:var(--shadow-lg);transform:translateY(-130%);transition:transform .32s ease;visibility:hidden;}
   .links.open{transform:translateY(0);visibility:visible}
   .links a{padding:12px 14px;font-size:1rem}
   section{padding:62px 0}
@@ -311,7 +153,6 @@ footer{
 <header class="nav" id="nav">
   <div class="container nav-inner">
     <a href="#home" class="brand" aria-label="Pranav Patel home">PP</a>
-
     <nav class="links" id="links">
       <a href="#about">About</a>
       <a href="#education">Academics</a>
@@ -320,7 +161,6 @@ footer{
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </nav>
-
     <div class="nav-actions">
       <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode">🌙</button>
       <button class="icon-btn menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
@@ -334,50 +174,25 @@ footer{
 <section class="hero" id="home">
   <div class="container">
     <div class="hero-grid">
-
       <div class="hero-text">
         <span class="badge"><span class="dot"></span> Open to Analyst &amp; BI Internships</span>
-
         <h1>Pranav <span class="gradient-text">Patel</span></h1>
-        <p class="role">Business &amp; Data Analyst · Power BI · SQL · Excel · Business Intelligence</p>
-
-        <p class="lede">
-          MBA Business Analytics candidate with hands-on experience in CRM operations, sales
-          pipeline management, data analysis and workflow automation — transforming raw data
-          into actionable insights and interactive dashboards.
-        </p>
-
+        <p class="role" id="hero-role"></p>
+        <p class="lede" id="hero-bio"></p>
         <div class="cta">
           <a class="btn btn-primary" href="#contact">Get in touch →</a>
           <a class="btn btn-ghost" href="Resume.pdf" download>⬇ Download Résumé</a>
         </div>
-
-        <div class="contact-row">
-          <a href="mailto:Pranavpatel.pps@gmail.com">✉ Pranavpatel.pps@gmail.com</a>
-          <a href="tel:+916353351512">✆ +91 63533 51512</a>
-          <a href="https://linkedin.com/in/pranav-patel-619130380" target="_blank" rel="noopener">in LinkedIn</a>
-          <span>📍 Vadodara, Gujarat, India</span>
-        </div>
+        <div class="contact-row" id="hero-contact"></div>
       </div>
-
       <div class="photo-col">
         <div class="photo">
           <div class="initials" id="initials">PP</div>
-          <!-- 👉 Replace "profile.jpg" with your own photo file -->
-          <img src="profile.jpg" alt="Pranav Patel"
-               onload="document.getElementById('initials').style.display='none'"
-               onerror="this.remove()">
+          <img src="profile.jpg" alt="Pranav Patel" onload="document.getElementById('initials').style.display='none'" onerror="this.remove()">
         </div>
       </div>
-
     </div>
-
-    <div class="stats reveal">
-      <div class="stat"><b>MBA</b><span>Business Analytics</span></div>
-      <div class="stat"><b>3+</b><span>Analytics Projects</span></div>
-      <div class="stat"><b>45</b><span>Day CRM Internship</span></div>
-      <div class="stat"><b>10+</b><span>Tools &amp; Skills</span></div>
-    </div>
+    <div class="stats reveal" id="stats-container"></div>
   </div>
 </section>
 
@@ -388,26 +203,7 @@ footer{
       <span class="eyebrow">Professional Summary</span>
       <h2>Business understanding, meet technical problem-solving</h2>
     </div>
-
-    <div class="grid-2">
-      <div class="card reveal">
-        <p style="color:var(--muted)">
-          I combine business understanding with technical problem-solving to support
-          <strong style="color:var(--text)">data-driven decision-making</strong>, process optimization
-          and business intelligence initiatives. My work spans CRM operations, sales pipeline
-          management, dashboard development and automation of routine business workflows.
-        </p>
-      </div>
-
-      <div class="card reveal">
-        <p style="color:var(--muted)">
-          Skilled in transforming business requirements and raw data into
-          <strong style="color:var(--text)">actionable insights</strong>, interactive dashboards and
-          automated business solutions — using Power BI, SQL, Excel, Power Query, DAX and
-          no-code automation platforms like N8N.
-        </p>
-      </div>
-    </div>
+    <div class="grid-2" id="about-container"></div>
   </div>
 </section>
 
@@ -419,20 +215,7 @@ footer{
       <h2>Education</h2>
       <p>Formal training in business analytics and commerce.</p>
     </div>
-
-    <div class="grid-2">
-      <div class="card edu-card reveal">
-        <span class="edu-year">2025 – 2027</span>
-        <h3>MBA — Business Analytics</h3>
-        <p class="school">Parul University, Gujarat, India</p>
-      </div>
-
-      <div class="card edu-card reveal">
-        <span class="edu-year">2022 – 2025</span>
-        <h3>Bachelor of Commerce (B.Com)</h3>
-        <p class="school">Maharaja Sayajirao University, Gujarat, India</p>
-      </div>
-    </div>
+    <div class="grid-2" id="education-container"></div>
   </div>
 </section>
 
@@ -443,26 +226,11 @@ footer{
       <span class="eyebrow">Experience</span>
       <h2>Where I've applied it</h2>
     </div>
-
-    <div class="card reveal">
-      <div class="exp-head">
-        <h3>BDA Intern — CRM Software</h3>
-        <span class="tag">45-Day Internship</span>
-      </div>
-      <p class="exp-company">Knowledge Square LLP · DIGIESALE CRM</p>
-
-      <ul class="bullets">
-        <li>Managed sales workflows, lead pipelines and follow-up activities within <strong>DIGIESALE CRM</strong>, improving lead visibility and sales process organization.</li>
-        <li>Analyzed prospect requirements and customer pain points to conduct personalized outreach via LinkedIn and WhatsApp.</li>
-        <li>Coordinated live product demonstrations, supporting prospect engagement and communication throughout the sales cycle.</li>
-        <li>Created and managed <strong>WhatsApp Business API (WABA)</strong> templates for structured bulk communication and outreach campaigns.</li>
-        <li>Used AI tools and workflow-based scheduling to create and publish marketing content across social media platforms.</li>
-      </ul>
-    </div>
+    <div id="experience-container"></div>
   </div>
 </section>
 
-<!-- ================= PROJECTS (DYNAMIC) ================= -->
+<!-- ================= PROJECTS (DYNAMIC FROM GITHUB) ================= -->
 <section id="projects" style="background:var(--bg-soft);border-block:1px solid var(--border)">
   <div class="container">
     <div class="section-head reveal">
@@ -470,8 +238,6 @@ footer{
       <h2>Things I've built</h2>
       <p>These projects are automatically pulled from my GitHub profile.</p>
     </div>
-
-    <!-- This container will be filled by JavaScript -->
     <div class="grid-3" id="projects-grid">
       <p style="color:var(--muted); grid-column: 1/-1; text-align: center;">Loading projects...</p>
     </div>
@@ -485,55 +251,7 @@ footer{
       <span class="eyebrow">Toolkit</span>
       <h2>Skills &amp; Technologies</h2>
     </div>
-
-    <div class="grid-2" style="gap:28px">
-
-      <div class="skill-group reveal">
-        <h3>Data &amp; Business Intelligence</h3>
-        <div class="chips">
-          <span class="chip">Power BI</span><span class="chip">SQL</span>
-          <span class="chip">Microsoft Excel</span><span class="chip">Power Query</span>
-          <span class="chip">DAX</span><span class="chip">Data Analysis</span>
-          <span class="chip">Data Visualization</span><span class="chip">Business Intelligence</span>
-        </div>
-      </div>
-
-      <div class="skill-group reveal">
-        <h3>Excel &amp; Reporting</h3>
-        <div class="chips">
-          <span class="chip">Pivot Tables</span><span class="chip">XLOOKUP</span>
-          <span class="chip">VLOOKUP</span><span class="chip">Data Cleaning</span>
-          <span class="chip">Data Summarization</span>
-        </div>
-      </div>
-
-      <div class="skill-group reveal">
-        <h3>Automation &amp; APIs</h3>
-        <div class="chips">
-          <span class="chip">N8N</span><span class="chip">Workflow Automation</span>
-          <span class="chip">Webhooks</span><span class="chip">REST APIs</span>
-          <span class="chip">Telegram Bot API</span><span class="chip">Google Sheets</span>
-        </div>
-      </div>
-
-      <div class="skill-group reveal">
-        <h3>CRM &amp; Business</h3>
-        <div class="chips">
-          <span class="chip">DIGIESALE CRM</span><span class="chip">Lead Management</span>
-          <span class="chip">Sales Pipelines</span><span class="chip">Process Optimization</span>
-          <span class="chip">WABA Template Creation</span>
-        </div>
-      </div>
-
-      <div class="skill-group reveal" style="grid-column:1/-1">
-        <h3>Soft Skills</h3>
-        <div class="chips">
-          <span class="chip">Analytical Thinking</span><span class="chip">Problem Solving</span>
-          <span class="chip">Communication</span><span class="chip">Stakeholder Management</span>
-        </div>
-      </div>
-
-    </div>
+    <div class="grid-2" style="gap:28px" id="skills-container"></div>
   </div>
 </section>
 
@@ -544,15 +262,7 @@ footer{
       <span class="eyebrow">Achievements</span>
       <h2>Milestones</h2>
     </div>
-
-    <div class="achievement reveal">
-      <div class="medal">🏆</div>
-      <p>
-        Successfully completed a <strong>45-day internship at Knowledge Square LLP</strong>,
-        gaining practical experience in CRM operations, sales workflows, business development,
-        customer engagement and digital automation.
-      </p>
-    </div>
+    <div id="achievements-container"></div>
   </div>
 </section>
 
@@ -563,12 +273,7 @@ footer{
       <span class="eyebrow">Contact</span>
       <h2>Let's build something data-driven</h2>
       <p>Open to analyst roles, BI internships and freelance dashboard / automation projects.</p>
-
-      <div class="contact-links">
-        <a class="btn btn-primary" href="mailto:Pranavpatel.pps@gmail.com">✉ Email me</a>
-        <a class="btn btn-ghost" href="tel:+916353351512">✆ Call</a>
-        <a class="btn btn-ghost" href="https://linkedin.com/in/pranav-patel-619130380" target="_blank" rel="noopener">in LinkedIn</a>
-      </div>
+      <div class="contact-links" id="contact-container"></div>
     </div>
   </div>
 </section>
@@ -577,46 +282,117 @@ footer{
 
 <footer>
   <div class="container">
-    © <span id="year"></span> Pranav Patel · Vadodara, Gujarat, India · Built with ❤ &amp; data
+    © <span id="year"></span> <span id="footer-name"></span> · <span id="footer-location"></span> · Built with ❤ &amp; data
   </div>
 </footer>
 
 <script>
-/* ---------- Year ---------- */
-document.getElementById('year').textContent = new Date().getFullYear();
+/* ---------- 1. FETCH AND RENDER DATA FROM resume.json ---------- */
+async function loadResumeData() {
+  try {
+    const response = await fetch('resume.json');
+    if (!response.ok) throw new Error('Failed to load resume.json');
+    const data = await response.json();
 
-/* ---------- Theme ---------- */
+    // --- Hero Section ---
+    document.getElementById('hero-role').textContent = data.hero.role;
+    document.getElementById('hero-bio').innerHTML = data.hero.bio;
+    document.getElementById('footer-name').textContent = data.hero.name;
+    document.getElementById('footer-location').textContent = data.hero.location;
+    
+    document.getElementById('hero-contact').innerHTML = `
+      <a href="mailto:${data.hero.email}">✉ ${data.hero.email}</a>
+      <a href="tel:${data.hero.phone.replace(/\s/g, '')}">✆ ${data.hero.phone}</a>
+      <a href="${data.hero.linkedin}" target="_blank" rel="noopener">in LinkedIn</a>
+      <span>📍 ${data.hero.location}</span>
+    `;
+
+    // --- Stats ---
+    document.getElementById('stats-container').innerHTML = data.hero.stats.map(s => `
+      <div class="stat"><b>${s.value}</b><span>${s.label}</span></div>
+    `).join('');
+
+    // --- About ---
+    document.getElementById('about-container').innerHTML = data.about.map(p => `
+      <div class="card reveal"><p style="color:var(--muted)">${p}</p></div>
+    `).join('');
+
+    // --- Education ---
+    document.getElementById('education-container').innerHTML = data.education.map(e => `
+      <div class="card edu-card reveal">
+        <span class="edu-year">${e.year}</span>
+        <h3>${e.degree}</h3>
+        <p class="school">${e.school}</p>
+      </div>
+    `).join('');
+
+    // --- Experience ---
+    document.getElementById('experience-container').innerHTML = data.experience.map(exp => `
+      <div class="card reveal" style="margin-bottom: 20px;">
+        <div class="exp-head">
+          <h3>${exp.title}</h3>
+          <span class="tag">${exp.duration}</span>
+        </div>
+        <p class="exp-company">${exp.company}</p>
+        <ul class="bullets">
+          ${exp.bullets.map(b => `<li>${b}</li>`).join('')}
+        </ul>
+      </div>
+    `).join('');
+
+    // --- Skills ---
+    document.getElementById('skills-container').innerHTML = data.skills.map(skillGroup => `
+      <div class="skill-group reveal">
+        <h3>${skillGroup.category}</h3>
+        <div class="chips">
+          ${skillGroup.items.map(item => `<span class="chip">${item}</span>`).join('')}
+        </div>
+      </div>
+    `).join('');
+
+    // --- Achievements ---
+    document.getElementById('achievements-container').innerHTML = data.achievements.map(ach => `
+      <div class="achievement reveal">
+        <div class="medal">${ach.icon}</div>
+        <p>${ach.text}</p>
+      </div>
+    `).join('');
+
+    // --- Contact Buttons ---
+    document.getElementById('contact-container').innerHTML = `
+      <a class="btn btn-primary" href="mailto:${data.hero.email}">✉ Email me</a>
+      <a class="btn btn-ghost" href="tel:${data.hero.phone.replace(/\s/g, '')}">✆ Call</a>
+      <a class="btn btn-ghost" href="${data.hero.linkedin}" target="_blank" rel="noopener">in LinkedIn</a>
+    `;
+
+    // Re-run the reveal observer for the newly created elements
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  } catch (error) {
+    console.error('Error loading resume data:', error);
+    document.getElementById('about-container').innerHTML = '<p style="color:red; text-align:center; grid-column:1/-1;">Unable to load resume data. Please check your resume.json file for syntax errors.</p>';
+  }
+}
+
+/* ---------- 2. EXISTING UI LOGIC ---------- */
+document.getElementById('year').textContent = new Date().getFullYear();
 const root = document.documentElement;
 const themeBtn = document.getElementById('themeBtn');
 const saved = localStorage.getItem('theme');
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-if (saved) root.dataset.theme = saved;
-else if (prefersDark) root.dataset.theme = 'dark';
+if (saved) root.dataset.theme = saved; else if (prefersDark) root.dataset.theme = 'dark';
 themeBtn.textContent = root.dataset.theme === 'dark' ? '☀️' : '🌙';
-
 themeBtn.addEventListener('click', () => {
   const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
-  root.dataset.theme = next;
-  localStorage.setItem('theme', next);
+  root.dataset.theme = next; localStorage.setItem('theme', next);
   themeBtn.textContent = next === 'dark' ? '☀️' : '🌙';
 });
-
-/* ---------- Mobile menu ---------- */
 const menuBtn = document.getElementById('menuBtn');
 const links = document.getElementById('links');
 menuBtn.addEventListener('click', () => links.classList.toggle('open'));
-links.querySelectorAll('a').forEach(a =>
-  a.addEventListener('click', () => links.classList.remove('open'))
-);
-
-/* ---------- Nav shadow on scroll ---------- */
+links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
 const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 10);
-}, { passive: true });
-
-/* ---------- Scroll reveal ---------- */
+window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 10); }, { passive: true });
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry, i) => {
     if (entry.isIntersecting) {
@@ -627,59 +403,36 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
 
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-
-/* ========================================================= */
-/* ---------- AUTOMATIC GITHUB PROJECT LOADER -------------- */
-/* ========================================================= */
+/* ---------- 3. AUTOMATIC GITHUB PROJECT LOADER ---------- */
 const githubUsername = 'pranavpatelpps-blip';
 const projectsGrid = document.getElementById('projects-grid');
 
 async function fetchGitHubProjects() {
   try {
-    // 1. Fetch repos from GitHub API
     const response = await fetch(`https://api.github.com/users/${githubUsername}/repos?sort=updated&per_page=100`);
     if (!response.ok) throw new Error('Failed to fetch repos');
     let repos = await response.json();
-
-    // 2. Filter out irrelevant repos
-    repos = repos.filter(repo => 
-      repo.name !== `${githubUsername}.github.io` && // Ignore the portfolio website itself
-      !repo.name.startsWith('.') &&                  // Ignore hidden repos
-      repo.name !== 'my-first-project'               // Ignore test repos
-    );
-
-    // 3. Clear the loading message
+    repos = repos.filter(repo => repo.name !== `${githubUsername}.github.io` && !repo.name.startsWith('.') && repo.name !== 'my-first-project');
     projectsGrid.innerHTML = '';
-
     if (repos.length === 0) {
       projectsGrid.innerHTML = '<p style="color:var(--muted); grid-column: 1/-1; text-align: center;">No public projects found yet.</p>';
       return;
     }
-
-    // 4. Loop through repos and create project cards
     repos.forEach(repo => {
-      // Attempt to load the screenshot.png from the repo, fallback to a placeholder if it fails
       const imageUrl = `https://raw.githubusercontent.com/${githubUsername}/${repo.name}/main/screenshot.png`;
-      const fallbackImage = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=500&q=80'; // Generic data placeholder
-
-      // Get topics/tags (use language if topics aren't set)
+      const fallbackImage = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=500&q=80';
       let tagsHTML = '';
       if (repo.topics && repo.topics.length > 0) {
         tagsHTML = repo.topics.slice(0, 3).map(t => `<span>${t}</span>`).join('');
       } else if (repo.language) {
         tagsHTML = `<span>${repo.language}</span>`;
       }
-
       const card = `
         <article class="card project reveal in">
           <img src="${imageUrl}" alt="${repo.name}" style="width:100%; height:160px; object-fit:cover; border-radius:12px; margin-bottom:1rem; background:#e2e8f0;" onerror="this.src='${fallbackImage}'">
           <h3>${repo.name.replace(/-/g, ' ').replace(/_/g, ' ')}</h3>
           <p style="color:var(--muted); font-size:0.9rem; margin-bottom:1rem; flex-grow:1;">${repo.description || 'Data analysis project. Click to view more details on GitHub.'}</p>
-          <div class="stack" style="margin-bottom:1rem;">
-            ${tagsHTML}
-          </div>
+          <div class="stack" style="margin-bottom:1rem;">${tagsHTML}</div>
           <div style="display:flex; gap:10px; margin-top:auto;">
             <a href="${repo.html_url}" target="_blank" class="btn btn-ghost" style="padding:8px 16px; font-size:0.85rem; flex:1; justify-content:center;">Code</a>
             <a href="${repo.homepage || repo.html_url}" target="_blank" class="btn btn-primary" style="padding:8px 16px; font-size:0.85rem; flex:1; justify-content:center;">Demo</a>
@@ -688,14 +441,14 @@ async function fetchGitHubProjects() {
       `;
       projectsGrid.insertAdjacentHTML('beforeend', card);
     });
-
   } catch (error) {
     console.error('Error fetching GitHub projects:', error);
     projectsGrid.innerHTML = '<p style="color:var(--muted); grid-column: 1/-1; text-align: center;">Unable to load projects at this time.</p>';
   }
 }
 
-// Run the function when the page loads
+// Initialize everything
+loadResumeData();
 fetchGitHubProjects();
 </script>
 
