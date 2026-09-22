@@ -1,8 +1,19 @@
 {
+  "nav": {
+    "about": "About",
+    "academics": "Academics",
+    "experience": "Experience",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
   "hero": {
     "name": "Pranav Patel",
     "role": "Business & Data Analyst · Power BI · SQL · Excel · Business Intelligence",
+    "badge": "Open to Analyst & BI Internships",
     "bio": "MBA Business Analytics candidate with hands-on experience in CRM operations, sales pipeline management, data analysis and workflow automation — transforming raw data into actionable insights and interactive dashboards.",
+    "cta_primary": "Get in touch →",
+    "cta_secondary": "⬇ Download Résumé",
     "email": "Pranavpatel.pps@gmail.com",
     "phone": "+91 63533 51512",
     "linkedin": "https://linkedin.com/in/pranav-patel-619130380",
@@ -14,21 +25,22 @@
       { "value": "10+", "label": "Tools & Skills" }
     ]
   },
+  "sections": {
+    "about": { "eyebrow": "Professional Summary", "title": "Business understanding, meet technical problem-solving" },
+    "education": { "eyebrow": "Academics", "title": "Education", "subtitle": "Formal training in business analytics and commerce." },
+    "experience": { "eyebrow": "Experience", "title": "Where I've applied it" },
+    "projects": { "eyebrow": "Projects & Analytical Work", "title": "Things I've built", "subtitle": "These projects are automatically pulled from my GitHub profile." },
+    "skills": { "eyebrow": "Toolkit", "title": "Skills & Technologies" },
+    "achievements": { "eyebrow": "Achievements", "title": "Milestones" },
+    "contact": { "eyebrow": "Contact", "title": "Let's build something data-driven", "subtitle": "Open to analyst roles, BI internships and freelance dashboard / automation projects." }
+  },
   "about": [
     "I combine business understanding with technical problem-solving to support <strong>data-driven decision-making</strong>, process optimization and business intelligence initiatives. My work spans CRM operations, sales pipeline management, dashboard development and automation of routine business workflows.",
     "Skilled in transforming business requirements and raw data into <strong>actionable insights</strong>, interactive dashboards and automated business solutions — using Power BI, SQL, Excel, Power Query, DAX and no-code automation platforms like N8N."
   ],
   "education": [
-    {
-      "year": "2025 – 2027",
-      "degree": "MBA — Business Analytics",
-      "school": "Parul University, Gujarat, India"
-    },
-    {
-      "year": "2022 – 2025",
-      "degree": "Bachelor of Commerce (B.Com)",
-      "school": "Maharaja Sayajirao University, Gujarat, India"
-    }
+    { "year": "2025 – 2027", "degree": "MBA — Business Analytics", "school": "Parul University, Gujarat, India" },
+    { "year": "2022 – 2025", "degree": "Bachelor of Commerce (B.Com)", "school": "Maharaja Sayajirao University, Gujarat, India" }
   ],
   "experience": [
     {
@@ -45,31 +57,14 @@
     }
   ],
   "skills": [
-    {
-      "category": "Data & Business Intelligence",
-      "items": ["Power BI", "SQL", "Microsoft Excel", "Power Query", "DAX", "Data Analysis", "Data Visualization", "Business Intelligence"]
-    },
-    {
-      "category": "Excel & Reporting",
-      "items": ["Pivot Tables", "XLOOKUP", "VLOOKUP", "Data Cleaning", "Data Summarization"]
-    },
-    {
-      "category": "Automation & APIs",
-      "items": ["N8N", "Workflow Automation", "Webhooks", "REST APIs", "Telegram Bot API", "Google Sheets"]
-    },
-    {
-      "category": "CRM & Business",
-      "items": ["DIGIESALE CRM", "Lead Management", "Sales Pipelines", "Process Optimization", "WABA Template Creation"]
-    },
-    {
-      "category": "Soft Skills",
-      "items": ["Analytical Thinking", "Problem Solving", "Communication", "Stakeholder Management"]
-    }
+    { "category": "Data & Business Intelligence", "items": ["Power BI", "SQL", "Microsoft Excel", "Power Query", "DAX", "Data Analysis", "Data Visualization", "Business Intelligence"] },
+    { "category": "Excel & Reporting", "items": ["Pivot Tables", "XLOOKUP", "VLOOKUP", "Data Cleaning", "Data Summarization"] },
+    { "category": "Automation & APIs", "items": ["N8N", "Workflow Automation", "Webhooks", "REST APIs", "Telegram Bot API", "Google Sheets"] },
+    { "category": "CRM & Business", "items": ["DIGIESALE CRM", "Lead Management", "Sales Pipelines", "Process Optimization", "WABA Template Creation"] },
+    { "category": "Soft Skills", "items": ["Analytical Thinking", "Problem Solving", "Communication", "Stakeholder Management"] }
   ],
   "achievements": [
-    {
-      "icon": "🏆",
-      "text": "Successfully completed a <strong>45-day internship at Knowledge Square LLP</strong>, gaining practical experience in CRM operations, sales workflows, business development, customer engagement and digital automation."
-    }
-  ]
+    { "icon": "🏆", "text": "Successfully completed a <strong>45-day internship at Knowledge Square LLP</strong>, gaining practical experience in CRM operations, sales workflows, business development, customer engagement and digital automation." }
+  ],
+  "footer": { "text": "Built with ❤ & data" }
 }
