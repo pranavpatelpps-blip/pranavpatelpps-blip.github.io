@@ -59,8 +59,8 @@
   "skills": [
     { "category": "Data & Business Intelligence", "items": ["Power BI", "SQL", "Microsoft Excel", "Power Query", "DAX", "Data Analysis", "Data Visualization", "Business Intelligence"] },
     { "category": "Excel & Reporting", "items": ["Pivot Tables", "XLOOKUP", "VLOOKUP", "Data Cleaning", "Data Summarization"] },
-    { "category": "Automation & APIs", "items": ["N8N", "Workflow Automation", "Webhooks", "REST APIs", "Telegram Bot API", "Google Sheets"] },
-    { "category": "CRM & Business", "items": ["DIGIESALE CRM", "Lead Management", "Sales Pipelines", "Process Optimization", "WABA Template Creation"] },
+    { "category": "Automation & APIs", "items": ["Basic N8N", "Workflow Automation", "Telegram Bot API", "Google Sheets"] },
+    { "category": "CRM & Business", "items": ["DIGIESALE CRM", "Lead Management", "Sales Pipelines", "Process Optimization"] },
     { "category": "Soft Skills", "items": ["Analytical Thinking", "Problem Solving", "Communication", "Stakeholder Management"] }
   ],
   "achievements": [
